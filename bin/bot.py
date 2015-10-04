@@ -7,6 +7,7 @@ try:
     LINE_USER_TOKEN    = environ.get("LINE_USER_TOKEN", "")
     LINE_COMPUTER_NAME = environ.get("LINE_COMPUTER_NAME", "LineBotWorker")
     client = LineClient(authToken=LINE_USER_TOKEN, com_name=LINE_USER_TOKEN)
+    client.profile.sendMessage("Bot started..")
 except:
     print("Login Failed")
     exit()
