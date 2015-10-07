@@ -5,9 +5,10 @@ from os import environ
 import re
 
 try:
-    LINE_USER_TOKEN    = environ.get("LINE_USER_TOKEN", "")
+    LINE_USERNAME      = environ.get("LINE_USERNAME", "")
+    LINE_PASSWORD      = environ.get("LINE_PASSWORD", "")
     LINE_COMPUTER_NAME = environ.get("LINE_COMPUTER_NAME", "LineBotWorker")
-    client = LineClient(authToken=LINE_USER_TOKEN, com_name=LINE_COMPUTER_NAME)
+    client = LineClient(id=LINE_USERNAME, password=LINE_PASSWORD, com_name=LINE_COMPUTER_NAME)
 except Exception as e:
     print "Login Failed\n", e.message
     exit()
