@@ -16,6 +16,7 @@ except Exception as e:
 while True:
     group = client.getGroupByName("LineBotWorker")
     chat = client.getMessageBox(group.id)
+    if not chat: continue
     messages = client.getRecentMessages(chat, chat.unreadCount)
     messages.reverse()
     for message in messages:
