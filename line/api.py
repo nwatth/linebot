@@ -54,6 +54,7 @@ class LineAPI(object):
     def __init__(self):
         object.__init__(self)
         self._session = requests.session()
+        self._headers['Connection'] = "keep-alive"
 
     def ready(self):
         """
